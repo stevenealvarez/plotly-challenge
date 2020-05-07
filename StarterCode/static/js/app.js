@@ -13,7 +13,7 @@ function getPlot(id){
         console.log(samples);
 
         //top 10
-        var samplevalues = samples.sample_values.slice(0, 10).reverse();
+        var samplevalues= samples.sample_values.slice(0, 10).reverse();
 
         var otu_top= (samples.otu_ids.slice(0, 10)).reverse();
 
@@ -25,7 +25,7 @@ function getPlot(id){
 
         //trace variables
         var trace = {
-            x: sampledata,
+            x: samplevalues,
             y: otu_id,
             text: otu_labels,
             marker: {
@@ -91,11 +91,12 @@ function getPlot(id){
 
                 demoInfo.html("");
 
-                Object.defineProperties(results).forEach((key) => {
+                Object.dentries(results).forEach((key) => {
                     demoInfo.append("h5").text(key[0].toUpperCase() + ": " + key[1] + "\n");
                 });
             });
         }
+        //index.html .....
         function optionChanged(id){
             getPlot(id);
             getInfo(id);
